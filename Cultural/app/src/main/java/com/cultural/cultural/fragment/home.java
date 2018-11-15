@@ -17,4 +17,5 @@ public class home extends Fragment {
         //change R.layout.yourlayoutfilename for each of your fragments
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
+
 }
