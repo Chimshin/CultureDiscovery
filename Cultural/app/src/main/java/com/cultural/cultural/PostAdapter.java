@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 
+import java.util.Arrays;
 import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
@@ -72,11 +73,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.title_1.setText(post.get_title());
         holder.user_name.setText(post.get_user_name());
 
-        //holder.answerView.setText(post.get_answer());
+        holder.answerView.setText(post.get_answer());
         //holder.imageView_1.setImageDrawable(mCtx.getResources().getDrawable(post.get_image()));
         holder.imageView_1.setImageResource(post.get_image());
-        //Glide.with(mCtx).load(post.get_image().into(holder.imageView_1);
-
         //holder.videoView.setVideoURI();
 
     }
@@ -89,7 +88,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     static class PostViewHolder extends  RecyclerView.ViewHolder{
 
         ImageButton user_head;
-        TextView country_1, title_1, tag_1, user_name;
+        TextView country_1, title_1, tag_1, user_name, answerView;
         ImageView imageView_1;
         //VideoView videoView;
 
@@ -103,7 +102,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             tag_1 = itemView.findViewById(R.id.tag_1);
             user_name = itemView.findViewById(R.id.user_name);
 
-            //answerView = itemView.findViewById(R.id.answerView);
+            answerView = itemView.findViewById(R.id.answerView);
             imageView_1 = itemView.findViewById(R.id.imageView_1);
             //videoView = itemView.findViewById(R.id.videoView);
         }

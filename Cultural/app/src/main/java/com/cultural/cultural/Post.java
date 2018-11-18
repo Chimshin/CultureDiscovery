@@ -12,11 +12,11 @@ public class Post {
     private String country;
     private String user_name;
 
-    //private String answer;
+    private String answer;
     private int image;//?
     //private int video;
 
-    public Post(int post_id, int user_id, String title, String tags, String country, String user_name, @Nullable int image){
+    public Post(int post_id, int user_id, String title, String tags, String country, String user_name,@Nullable String answer, @Nullable int image){
         this.post_id = post_id;
         this.user_id = user_id;
         this.title = title;
@@ -24,7 +24,7 @@ public class Post {
         this.country = country;
         this.user_name = user_name;
 
-        //this.answer = answer;
+        this.answer = answer;
         this.image = image;
         //this.video = video;
     }
@@ -52,9 +52,9 @@ public class Post {
     public String get_user_name(){
         return user_name;
     }
-    /*public String get_answer() {
+    public String get_answer() {
         return answer;
-    }*/
+    }
 
     public int get_image() {//?
         return image;

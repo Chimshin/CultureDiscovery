@@ -52,22 +52,22 @@ public class home extends Fragment {
         mPost.add(new Post(
                 1,
                 R.drawable.ic_dashboard_black_24dp,
-                "Tang dynasty detective drama",
+                "Title: Tang dynasty detective drama",
                 "tv",
                 "China",
                 "Qianxi",
+                "",
                 R.drawable.image1));
         mPost.add(new Post(
                 1,
                 R.drawable.ic_notifications_black_24dp,
-                "helloooo world, Tong with daddy",
+                "Question: Normally WHEN do you eat dinner?",
                 "life",
                 "China",
                 "Tong",
-                R.drawable.image2));
+                "5:30 to 7:00",
+                0));
         }
-
-
 
 
 }
