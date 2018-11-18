@@ -51,15 +51,19 @@ public class home extends Fragment {
     private void initPosts() {
         mPost.add(new Post(
                 1,
+                R.drawable.ic_dashboard_black_24dp,
                 "Tang dynasty detective drama",
                 "tv",
                 "China",
+                "Qianxi",
                 R.drawable.image1));
         mPost.add(new Post(
                 1,
+                R.drawable.ic_notifications_black_24dp,
                 "helloooo world, Tong with daddy",
                 "life",
                 "China",
+                "Tong",
                 R.drawable.image2));
         }
 

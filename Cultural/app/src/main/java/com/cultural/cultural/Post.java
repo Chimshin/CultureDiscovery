@@ -6,21 +6,23 @@ import java.util.List;
 
 public class Post {
     private int post_id;
-    //private int user_id;
+    private int user_id;
     private String title;
     private String tags;
     private String country;
+    private String user_name;
 
     //private String answer;
     private int image;//?
     //private int video;
 
-    public Post(int post_id, String title, String tags, String country, @Nullable int image){
+    public Post(int post_id, int user_id, String title, String tags, String country, String user_name, @Nullable int image){
         this.post_id = post_id;
-        //this.user_id = user_id;
+        this.user_id = user_id;
         this.title = title;
         this.tags = tags;
         this.country = country;
+        this.user_name = user_name;
 
         //this.answer = answer;
         this.image = image;
@@ -31,11 +33,9 @@ public class Post {
         return post_id;
     }
 
-    /*
+
     public int get_user_id(){return user_id;
     }
-     */
-
 
     public String get_title(){
         return title;
@@ -49,6 +49,9 @@ public class Post {
         return country;
     }
 
+    public String get_user_name(){
+        return user_name;
+    }
     /*public String get_answer() {
         return answer;
     }*/

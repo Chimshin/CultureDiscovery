@@ -66,10 +66,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.country_1.setText(country);
         holder.country_1.setMovementMethod(LinkMovementMethod.getInstance());
          */
-        //holder.user_head.setImageDrawable(mCtx.getResources().getDrawable(post.get_user_id()));
+        holder.user_head.setImageResource(post.get_user_id());
         holder.country_1.setText(post.get_country());
         holder.tag_1.setText(post.get_tags());
         holder.title_1.setText(post.get_title());
+        holder.user_name.setText(post.get_user_name());
 
         //holder.answerView.setText(post.get_answer());
         //holder.imageView_1.setImageDrawable(mCtx.getResources().getDrawable(post.get_image()));
@@ -87,8 +88,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     static class PostViewHolder extends  RecyclerView.ViewHolder{
 
-        //ImageButton user_head;
-        TextView country_1, title_1, tag_1;
+        ImageButton user_head;
+        TextView country_1, title_1, tag_1, user_name;
         ImageView imageView_1;
         //VideoView videoView;
 
@@ -96,10 +97,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
          PostViewHolder(View itemView){
             super(itemView);
 
-            //user_head = itemView.findViewById(R.id.user_head);
+            user_head = itemView.findViewById(R.id.user_head);
             country_1 = itemView.findViewById(R.id.country_1);
             title_1 = itemView.findViewById(R.id.title_1);
             tag_1 = itemView.findViewById(R.id.tag_1);
+            user_name = itemView.findViewById(R.id.user_name);
 
             //answerView = itemView.findViewById(R.id.answerView);
             imageView_1 = itemView.findViewById(R.id.imageView_1);
