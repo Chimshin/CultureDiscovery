@@ -48,6 +48,10 @@
         <activity
             android:name=".countryActivity"
             android:label="@string/title_activity_country"></activity>
+
+        <activity
+            android:name=".commentActivity"
+            android:label="commentActivity"></activity>
     </application>
 
 </manifest>

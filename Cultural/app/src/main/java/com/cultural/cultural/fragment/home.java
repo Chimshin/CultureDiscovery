@@ -27,7 +27,7 @@ public class home extends Fragment {
 
     private RecyclerView mRecyclerView;
 
-    private Button btn;
+    //private Button btn;
 
 
     @Nullable
@@ -52,6 +52,13 @@ public class home extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         PostAdapter mPostAdapter = new PostAdapter(mPost);
         mRecyclerView.setAdapter(mPostAdapter);
+        mPostAdapter.buttonSetOnclick(new PostAdapter.ButtonInterface() {
+            @Override
+            public void onclick(View view) {
+                Intent intent = new Intent(getActivity(), commentActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -76,6 +83,7 @@ public class home extends Fragment {
                 "normally 5:30 to 6:30",
                 0));
         }
+
 
 
 

@@ -27,6 +27,23 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     //storing all the posts in a list
     private List<Post> postList;
 
+    private ButtonInterface buttonInterface;
+
+
+    /**
+     *按钮点击事件需要的方法
+     */
+    public void buttonSetOnclick(ButtonInterface buttonInterface){
+        this.buttonInterface = buttonInterface;
+    }
+
+    /**
+     * 按钮点击事件对应的接口
+     */
+    public interface ButtonInterface{
+        public void onclick(View view);
+    }
+
 
     //getting the context and post list with constructor
     public PostAdapter( List<Post> postList){
@@ -43,16 +60,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.post_pic_layout, null);;
 
-
-        /*
-        if (flag == 1){
-            view = inflater.inflate(R.layout.post_ans_layout, null);
-        }else if (flag == 2){
-            view = inflater.inflate(R.layout.post_video_layout, null);
-        }else{
-            view = inflater.inflate(R.layout.post_pic_layout, null);
-        }
-         */
         return new PostViewHolder(view);
     }
 
@@ -78,6 +85,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         //holder.imageView_1.setImageDrawable(mCtx.getResources().getDrawable(post.get_image()));
         holder.imageView_1.setImageResource(post.get_image());
         //holder.videoView.setVideoURI();
+        holder.but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(buttonInterface!=null) {
+//                  接口实例化后的而对象，调用重写后的方法
+                    buttonInterface.onclick(v);
+                }
+            }
+        });
 
     }
 
@@ -91,6 +107,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         ImageButton user_head;
         TextView country_1, title_1, tag_1, user_name, answerView;
         ImageView imageView_1;
+        Button but;
         //VideoView videoView;
 
 
@@ -102,6 +119,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             title_1 = itemView.findViewById(R.id.title_1);
             tag_1 = itemView.findViewById(R.id.tag_1);
             user_name = itemView.findViewById(R.id.user_name);
+            but = itemView.findViewById(R.id.button);
 
             answerView = itemView.findViewById(R.id.answerView);
             imageView_1 = itemView.findViewById(R.id.imageView_1);
