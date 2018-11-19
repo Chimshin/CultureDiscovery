@@ -1,5 +1,6 @@
 package com.cultural.cultural.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import com.cultural.cultural.Post;
 import com.cultural.cultural.PostAdapter;
 import com.cultural.cultural.R;
+import com.cultural.cultural.commentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,9 +67,15 @@ public class home extends Fragment {
                 "life",
                 "China",
                 "Tong",
-                "5:30 to 7:00",
+                "normally 5:30 to 6:30",
                 0));
         }
+
+
+    public void comment(View view){
+        Intent intent = new Intent(this.getContext(),commentActivity.class);
+        startActivity(intent);
+    }
 
 
 }
