@@ -1,5 +1,7 @@
 package com.cultural.cultural;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
 import android.content.Context;
@@ -7,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,7 +34,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         this.postList = postList;
     }
 
-
     @Override
     public PostViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         if (mCtx == null) {
@@ -51,7 +53,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             view = inflater.inflate(R.layout.post_pic_layout, null);
         }
          */
-
         return new PostViewHolder(view);
     }
 

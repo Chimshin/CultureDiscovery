@@ -25,6 +25,6 @@
         android:id="@+id/comment_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="This is a cccooommment"
          />
 </android.support.constraint.ConstraintLayout>

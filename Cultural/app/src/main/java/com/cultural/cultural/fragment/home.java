@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.cultural.cultural.Post;
 import com.cultural.cultural.PostAdapter;
@@ -25,6 +27,7 @@ public class home extends Fragment {
 
     private RecyclerView mRecyclerView;
 
+    private Button btn;
 
 
     @Nullable
@@ -34,9 +37,9 @@ public class home extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mRecyclerView = view.findViewById(R.id.recyclerView);
         initView();
-
         return view;
     }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,11 +47,14 @@ public class home extends Fragment {
         initPosts();
     }
 
+
     private void initView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         PostAdapter mPostAdapter = new PostAdapter(mPost);
         mRecyclerView.setAdapter(mPostAdapter);
     }
+
+
 
     private void initPosts() {
         mPost.add(new Post(
@@ -70,6 +76,9 @@ public class home extends Fragment {
                 "normally 5:30 to 6:30",
                 0));
         }
+
+
+
 
 
 }
