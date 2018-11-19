@@ -29,15 +29,17 @@ public class home extends Fragment {
 
     private Button btn;
 
+    private View rootView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        mRecyclerView = view.findViewById(R.id.recyclerView);
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        mRecyclerView = rootView.findViewById(R.id.recyclerView);
         initView();
-        return view;
+        return rootView;
     }
 
 
@@ -76,23 +78,4 @@ public class home extends Fragment {
                 "normally 5:30 to 6:30",
                 0));
         }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState){
-        super.onActivityCreated(savedInstanceState);
-        btn = (Button) getActivity().findViewById(R.id.button);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), commentActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-    }
-
-
-
 }
