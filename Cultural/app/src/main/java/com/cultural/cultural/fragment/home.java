@@ -77,7 +77,21 @@ public class home extends Fragment {
                 0));
         }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+        btn = (Button) getActivity().findViewById(R.id.button);
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), commentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
 
 
 
