@@ -72,10 +72,4 @@ public class home extends Fragment {
         }
 
 
-    public void comment(View view){
-        Intent intent = new Intent(this.getContext(),commentActivity.class);
-        startActivity(intent);
-    }
-
-
 }
