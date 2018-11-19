@@ -58,7 +58,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         }
         //inflating and returning view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.post_pic_layout, null);;
+        View view = inflater.inflate(R.layout.activity_post, null);;
 
         return new PostViewHolder(view);
     }

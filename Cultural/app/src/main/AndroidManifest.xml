@@ -4,6 +4,7 @@
 
     <!-- Permissions -->
 
+
     <!-- Used by the Google Maps API to download map tiles from Google Maps servers. -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -47,11 +48,14 @@
 
         <activity
             android:name=".countryActivity"
-            android:label="@string/title_activity_country"></activity>
-
+            android:label="@string/title_activity_country" />
         <activity
             android:name=".commentActivity"
-            android:label="commentActivity"></activity>
+            android:label="commentActivity" />
+        <activity
+            android:name=".tagActivity"
+            android:label="tagActivity" />
+        <activity android:name=".postActivity"></activity>
     </application>
 
 </manifest>

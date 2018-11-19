@@ -88,8 +88,6 @@ public class map extends Fragment implements  OnMapReadyCallback, GoogleMap.OnMa
             }
         });
 
-
-        Log.i("GooleMap", "MyClass.getView()" + "I am out get null");
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         if(getActivity()!=null) {
             Log.i("GooleMap", "MyClass.getView()" + "I am out fragment null");
@@ -98,16 +96,11 @@ public class map extends Fragment implements  OnMapReadyCallback, GoogleMap.OnMa
             if (mapFragment != null) {
                mapFragment.getMapAsync(this);
             }
-            else {
-                Log.i("GooleMap", "getChildFragmentManager " + "I am a null object!");
-            }
         }
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
-        Log.i("GooleMap", "MyClass.getView()" + "I am here");
 
         mChina = googleMap.addMarker(new MarkerOptions()
                 .position(CHINA)
@@ -139,11 +132,11 @@ public class map extends Fragment implements  OnMapReadyCallback, GoogleMap.OnMa
 
             intent.putExtra("country", "USA");
             intent.putExtra("follower", "FOLLOWER:21");
-            intent.putExtra("post1", "Hamburger cooking tips");
-            intent.putExtra("post2", "What is your biggest “only in the USA” moment?");
-            intent.putExtra("post3", "What is American Culture?");
-            intent.putExtra("post4", "Redwood National Forest");
-            intent.putExtra("post5", "Hawaii travel tips");
+            intent.putExtra("post1", "Thanks giving");
+            intent.putExtra("post2", "Hamburger cooking tips");
+            intent.putExtra("post3", "Hawaii travel tips");
+            intent.putExtra("post4", "What's your favorite movie");
+            intent.putExtra("post5", "How to make a nice beef");
 
             startActivity(intent);
         }

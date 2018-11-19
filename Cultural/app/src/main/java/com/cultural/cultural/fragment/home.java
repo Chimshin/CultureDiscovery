@@ -63,8 +63,6 @@ public class home extends Fragment {
         });
     }
 
-
-
     private void initPosts() {
         mPost.add(new Post(
                 1,

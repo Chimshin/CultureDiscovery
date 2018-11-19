@@ -3,7 +3,10 @@ package com.cultural.cultural;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class countryActivity extends Activity {
 
@@ -27,6 +30,11 @@ public class countryActivity extends Activity {
         title4.setText(intent.getStringExtra("post4"));
         title5.setText(intent.getStringExtra("post5"));
 
+        follower.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(countryActivity.this,"Followed successful" ,Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
 }
