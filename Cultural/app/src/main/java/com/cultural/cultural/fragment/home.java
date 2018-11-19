@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cultural.cultural.Post;
@@ -68,6 +69,18 @@ public class home extends Fragment {
             public void onclick_0(View view) {
                 Intent intent = new Intent(getActivity(), commentActivity.class);
                 startActivity(intent);
+            }
+
+            @Override
+            public void onclick_2(View view) {
+                TextView up = (TextView) getActivity().findViewById(R.id.up_num);
+                up.setText("25");
+            }
+
+            @Override
+            public void onclick_3(View view) {
+                TextView down = (TextView) getActivity().findViewById(R.id.down_num);
+                down.setText("4");
             }
 
             @Override
