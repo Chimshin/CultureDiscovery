@@ -52,6 +52,18 @@
         <activity
             android:name=".commentActivity"
             android:label="commentActivity"></activity>
+
+        <activity
+            android:name=".flipActivity"
+            android:label="flipActivity"></activity>
+
+        <activity
+            android:name=".tagActivity"
+            android:label="tagActivity"></activity>
+
+        <activity
+            android:name=".otherUserActivity"
+            android:label="otherUserActivity"></activity>
     </application>
 
 </manifest>

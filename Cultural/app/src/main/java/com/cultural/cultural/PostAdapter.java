@@ -28,6 +28,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     private List<Post> postList;
 
     private ButtonInterface buttonInterface;
+    private TextInterface textInterface;
+    private ImageButtonInterface imageButtonInterface;
 
 
     /**
@@ -41,8 +43,27 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
      * 按钮点击事件对应的接口
      */
     public interface ButtonInterface{
+        public void onclick_0(View view);
+        public void onclick_5(View view);
+    }
+
+    public void textSetOnclick(TextInterface textInterface){
+        this.textInterface = textInterface;
+    }
+
+    public interface TextInterface{
+        public void onclick_country(View view);
+        public void onclick_tag(View view);
+    }
+
+    public void imageButtonSetOnclick(ImageButtonInterface imageButtonInterface){
+        this.imageButtonInterface = imageButtonInterface;
+    }
+    public interface ImageButtonInterface{
         public void onclick(View view);
     }
+
+
 
 
     //getting the context and post list with constructor
@@ -76,8 +97,35 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.country_1.setMovementMethod(LinkMovementMethod.getInstance());
          */
         holder.user_head.setImageResource(post.get_user_id());
+        holder.user_head.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (imageButtonInterface!= null) {
+                    imageButtonInterface.onclick(v);
+                }
+            }
+        });
         holder.country_1.setText(post.get_country());
+        holder.country_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (textInterface != null) {
+                    textInterface.onclick_country(v);
+                }
+            }
+        });
+
         holder.tag_1.setText(post.get_tags());
+        holder.tag_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (textInterface != null) {
+                    textInterface.onclick_tag(v);
+                }
+            }
+        });
+
+
         holder.title_1.setText(post.get_title());
         holder.user_name.setText(post.get_user_name());
 
@@ -90,7 +138,17 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             public void onClick(View v) {
                 if(buttonInterface!=null) {
 //                  接口实例化后的而对象，调用重写后的方法
-                    buttonInterface.onclick(v);
+                    buttonInterface.onclick_0(v);
+                }
+            }
+        });
+
+        holder.but5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(buttonInterface!=null) {
+//                  接口实例化后的而对象，调用重写后的方法
+                    buttonInterface.onclick_5(v);
                 }
             }
         });
@@ -107,7 +165,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         ImageButton user_head;
         TextView country_1, title_1, tag_1, user_name, answerView;
         ImageView imageView_1;
-        Button but;
+        Button but, but5;
         //VideoView videoView;
 
 
@@ -120,6 +178,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             tag_1 = itemView.findViewById(R.id.tag_1);
             user_name = itemView.findViewById(R.id.user_name);
             but = itemView.findViewById(R.id.button);
+            but5 = itemView.findViewById(R.id.button5);
 
             answerView = itemView.findViewById(R.id.answerView);
             imageView_1 = itemView.findViewById(R.id.imageView_1);
